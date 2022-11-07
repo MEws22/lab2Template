@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see cpsml.CpsmlPackage#getWiredModule()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noConnectionToSelf'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot noConnectionToSelf='\n\t\t\tself.connect-&gt;excludes(self)\n\t\t'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='noConnectionToSelf_cS3b'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot noConnectionToSelf_cS3b='\n\t\t\tself.connect-&gt;excludes(self)\n\t\t'"
  * @generated
  */
 public interface WiredModule extends ConnectionModule {

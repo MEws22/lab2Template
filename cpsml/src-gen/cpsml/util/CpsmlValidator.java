@@ -198,30 +198,30 @@ public class CpsmlValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(node, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateNode_statusBasedOnComponents(node, diagnostics, context);
+			result &= validateNode_statusBasedOnComponents_c1(node, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the statusBasedOnComponents constraint of '<em>Node</em>'.
+	 * The cached validation expression for the statusBasedOnComponents_c1 constraint of '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String NODE__STATUS_BASED_ON_COMPONENTS__EEXPRESSION = "\n"
+	protected static final String NODE__STATUS_BASED_ON_COMPONENTS_C1__EEXPRESSION = "\n"
 			+ "\t\t\tself.status = Status::GOOD implies self.component->forAll(c| c.status = Status::GOOD)";
 
 	/**
-	 * Validates the statusBasedOnComponents constraint of '<em>Node</em>'.
+	 * Validates the statusBasedOnComponents_c1 constraint of '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateNode_statusBasedOnComponents(Node node, DiagnosticChain diagnostics,
+	public boolean validateNode_statusBasedOnComponents_c1(Node node, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate(CpsmlPackage.Literals.NODE, node, diagnostics, context,
-				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "statusBasedOnComponents",
-				NODE__STATUS_BASED_ON_COMPONENTS__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "statusBasedOnComponents_c1",
+				NODE__STATUS_BASED_ON_COMPONENTS_C1__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -350,31 +350,31 @@ public class CpsmlValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(connectionModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateConnectionModule_namingConvention(connectionModule, diagnostics, context);
+			result &= validateConnectionModule_namingConvention_cS2(connectionModule, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the namingConvention constraint of '<em>Connection Module</em>'.
+	 * The cached validation expression for the namingConvention_cS2 constraint of '<em>Connection Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTION_MODULE__NAMING_CONVENTION__EEXPRESSION = "\n"
+	protected static final String CONNECTION_MODULE__NAMING_CONVENTION_CS2__EEXPRESSION = "\n"
 			+ "\t\t\tself.name.substring(1, self.oclContainer.oclAsType(NamedElement).name.size()) = self.oclContainer.oclAsType(NamedElement).name.toUpper()\n"
 			+ "\t\t";
 
 	/**
-	 * Validates the namingConvention constraint of '<em>Connection Module</em>'.
+	 * Validates the namingConvention_cS2 constraint of '<em>Connection Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateConnectionModule_namingConvention(ConnectionModule connectionModule,
+	public boolean validateConnectionModule_namingConvention_cS2(ConnectionModule connectionModule,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate(CpsmlPackage.Literals.CONNECTION_MODULE, connectionModule, diagnostics, context,
-				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "namingConvention",
-				CONNECTION_MODULE__NAMING_CONVENTION__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "namingConvention_cS2",
+				CONNECTION_MODULE__NAMING_CONVENTION_CS2__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -402,35 +402,35 @@ public class CpsmlValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(wirelessModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateConnectionModule_namingConvention(wirelessModule, diagnostics, context);
+			result &= validateConnectionModule_namingConvention_cS2(wirelessModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateWirelessModule_rangePositive(wirelessModule, diagnostics, context);
+			result &= validateWirelessModule_rangePositive_cS4(wirelessModule, diagnostics, context);
 		if (result || diagnostics != null)
 			result &= validateWirelessModule_distancesWihtinRange_c4(wirelessModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateWirelessModule_noConnectionToSelf(wirelessModule, diagnostics, context);
+			result &= validateWirelessModule_noConnectionToSelf_cS3a(wirelessModule, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the rangePositive constraint of '<em>Wireless Module</em>'.
+	 * The cached validation expression for the rangePositive_cS4 constraint of '<em>Wireless Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WIRELESS_MODULE__RANGE_POSITIVE__EEXPRESSION = "\n" + "\t\t\tself.range >= 0";
+	protected static final String WIRELESS_MODULE__RANGE_POSITIVE_CS4__EEXPRESSION = "\n" + "\t\t\tself.range >= 0";
 
 	/**
-	 * Validates the rangePositive constraint of '<em>Wireless Module</em>'.
+	 * Validates the rangePositive_cS4 constraint of '<em>Wireless Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWirelessModule_rangePositive(WirelessModule wirelessModule, DiagnosticChain diagnostics,
+	public boolean validateWirelessModule_rangePositive_cS4(WirelessModule wirelessModule, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate(CpsmlPackage.Literals.WIRELESS_MODULE, wirelessModule, diagnostics, context,
-				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "rangePositive",
-				WIRELESS_MODULE__RANGE_POSITIVE__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "rangePositive_cS4",
+				WIRELESS_MODULE__RANGE_POSITIVE_CS4__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -463,25 +463,25 @@ public class CpsmlValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the noConnectionToSelf constraint of '<em>Wireless Module</em>'.
+	 * The cached validation expression for the noConnectionToSelf_cS3a constraint of '<em>Wireless Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WIRELESS_MODULE__NO_CONNECTION_TO_SELF__EEXPRESSION = "\n"
+	protected static final String WIRELESS_MODULE__NO_CONNECTION_TO_SELF_CS_3A__EEXPRESSION = "\n"
 			+ "\t\t\tself.connect->excludes(self)\n" + "\t\t";
 
 	/**
-	 * Validates the noConnectionToSelf constraint of '<em>Wireless Module</em>'.
+	 * Validates the noConnectionToSelf_cS3a constraint of '<em>Wireless Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWirelessModule_noConnectionToSelf(WirelessModule wirelessModule, DiagnosticChain diagnostics,
-			Map<Object, Object> context) {
+	public boolean validateWirelessModule_noConnectionToSelf_cS3a(WirelessModule wirelessModule,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate(CpsmlPackage.Literals.WIRELESS_MODULE, wirelessModule, diagnostics, context,
-				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "noConnectionToSelf",
-				WIRELESS_MODULE__NO_CONNECTION_TO_SELF__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "noConnectionToSelf_cS3a",
+				WIRELESS_MODULE__NO_CONNECTION_TO_SELF_CS_3A__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**
@@ -509,32 +509,32 @@ public class CpsmlValidator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(wiredModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateConnectionModule_namingConvention(wiredModule, diagnostics, context);
+			result &= validateConnectionModule_namingConvention_cS2(wiredModule, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateWiredModule_noConnectionToSelf(wiredModule, diagnostics, context);
+			result &= validateWiredModule_noConnectionToSelf_cS3b(wiredModule, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the noConnectionToSelf constraint of '<em>Wired Module</em>'.
+	 * The cached validation expression for the noConnectionToSelf_cS3b constraint of '<em>Wired Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String WIRED_MODULE__NO_CONNECTION_TO_SELF__EEXPRESSION = "\n"
+	protected static final String WIRED_MODULE__NO_CONNECTION_TO_SELF_CS_3B__EEXPRESSION = "\n"
 			+ "\t\t\tself.connect->excludes(self)\n" + "\t\t";
 
 	/**
-	 * Validates the noConnectionToSelf constraint of '<em>Wired Module</em>'.
+	 * Validates the noConnectionToSelf_cS3b constraint of '<em>Wired Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateWiredModule_noConnectionToSelf(WiredModule wiredModule, DiagnosticChain diagnostics,
+	public boolean validateWiredModule_noConnectionToSelf_cS3b(WiredModule wiredModule, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate(CpsmlPackage.Literals.WIRED_MODULE, wiredModule, diagnostics, context,
-				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "noConnectionToSelf",
-				WIRED_MODULE__NO_CONNECTION_TO_SELF__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
+				"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "noConnectionToSelf_cS3b",
+				WIRED_MODULE__NO_CONNECTION_TO_SELF_CS_3B__EEXPRESSION, Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0);
 	}
 
 	/**

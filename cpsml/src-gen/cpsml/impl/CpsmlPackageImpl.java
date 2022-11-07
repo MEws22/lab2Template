@@ -1122,13 +1122,13 @@ public class CpsmlPackageImpl extends EPackageImpl implements CpsmlPackage {
 				new String[] { "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 						"settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", "validationDelegates",
 						"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot" });
-		addAnnotation(nodeEClass, source, new String[] { "constraints", "statusBasedOnComponents" });
+		addAnnotation(nodeEClass, source, new String[] { "constraints", "statusBasedOnComponents_c1" });
 		addAnnotation(functionEClass, source,
 				new String[] { "constraints", "returnAndNotNull_c3 sensorRequiresReturn_c3" });
-		addAnnotation(connectionModuleEClass, source, new String[] { "constraints", "namingConvention" });
+		addAnnotation(connectionModuleEClass, source, new String[] { "constraints", "namingConvention_cS2" });
 		addAnnotation(wirelessModuleEClass, source,
-				new String[] { "constraints", "rangePositive distancesWihtinRange_c4 noConnectionToSelf" });
-		addAnnotation(wiredModuleEClass, source, new String[] { "constraints", "noConnectionToSelf" });
+				new String[] { "constraints", "rangePositive_cS4 distancesWihtinRange_c4 noConnectionToSelf_cS3a" });
+		addAnnotation(wiredModuleEClass, source, new String[] { "constraints", "noConnectionToSelf_cS3b" });
 		addAnnotation(messagingLinkEClass, source, new String[] { "constraints",
 				"messagingElementConnectedToMB_c2 commonTopicsWithNode_cS1a commonTopicsWithMB_cS1b" });
 	}
@@ -1141,20 +1141,20 @@ public class CpsmlPackageImpl extends EPackageImpl implements CpsmlPackage {
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation(nodeEClass, source, new String[] { "statusBasedOnComponents",
+		addAnnotation(nodeEClass, source, new String[] { "statusBasedOnComponents_c1",
 				"\n\t\t\tself.status = Status::GOOD implies self.component->forAll(c| c.status = Status::GOOD)" });
 		addAnnotation(functionEClass, source,
 				new String[] { "returnAndNotNull_c3", "\n\t\t\tself.hasReturn implies returnDataType <> DataType::NULL",
 						"sensorRequiresReturn_c3",
 						"\n\t\t\tself.oclContainer.oclIsTypeOf(Sensor) implies hasReturn\n\t\t\t" });
-		addAnnotation(connectionModuleEClass, source, new String[] { "namingConvention",
+		addAnnotation(connectionModuleEClass, source, new String[] { "namingConvention_cS2",
 				"\n\t\t\tself.name.substring(1, self.oclContainer.oclAsType(NamedElement).name.size()) = self.oclContainer.oclAsType(NamedElement).name.toUpper()\n\t\t" });
-		addAnnotation(wirelessModuleEClass, source, new String[] { "rangePositive", "\n\t\t\tself.range >= 0",
+		addAnnotation(wirelessModuleEClass, source, new String[] { "rangePositive_cS4", "\n\t\t\tself.range >= 0",
 				"distancesWihtinRange_c4",
 				"\n\t\t\tself.connect->forAll(p|\n\t\t\t\t(\n\t\t\t\t\t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).x - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).x)*\n\t\t\t\t\t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).x - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).x) +\n\t\t\t\t\t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).y - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).y)*\n\t\t\t\t\t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).y - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).y) + \n\t\t\t\t\t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).z - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).z)*\n\t\t\t\t \t (self.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).z - p.oclContainer.oclAsType(ConnectableElement).position.oclAsType(Position).z)\n\t\t\t\t ) <= (self.range * self.range).min(p.range * p.range)\n\t\t)",
-				"noConnectionToSelf", "\n\t\t\tself.connect->excludes(self)\n\t\t" });
+				"noConnectionToSelf_cS3a", "\n\t\t\tself.connect->excludes(self)\n\t\t" });
 		addAnnotation(wiredModuleEClass, source,
-				new String[] { "noConnectionToSelf", "\n\t\t\tself.connect->excludes(self)\n\t\t" });
+				new String[] { "noConnectionToSelf_cS3b", "\n\t\t\tself.connect->excludes(self)\n\t\t" });
 		addAnnotation(messagingLinkEClass, source, new String[] { "messagingElementConnectedToMB_c2",
 				"\n\t\t\tif self.oclContainer.oclIsTypeOf(Node) then\n\t\t\t\tself.oclContainer.oclAsType(Node).connectionModule->exists(cM | \n\t\t\t\t\t\t(cM.oclIsTypeOf(WiredModule) implies\n\t\t\t\t\t\t\tcM.oclAsType(WiredModule).connect->exists(c|c.oclContainer = self.messageBroker) or\n\t\t\t\t\t\t\tcM.oclAsType(WiredModule).connectOpposite->exists(c|c.oclContainer = self.messageBroker)\n\t\t\t\t\t\t)\n\t\t\t\t\t\tand\n\t\t\t\t\t\t(cM.oclIsTypeOf(WirelessModule) implies\n\t\t\t\t\t\t\tcM.oclAsType(WirelessModule).connect->exists(c|c.oclContainer = self.messageBroker) or\n\t\t\t\t\t\t\tcM.oclAsType(WirelessModule).connectOpposite->exists(c|c.oclContainer = self.messageBroker)\n\t\t\t\t\t\t)\n\t\t\t\t)\n\t\t\telse\n\t\t\t\ttrue\n\t\t\tendif\n\t\t",
 				"commonTopicsWithNode_cS1a",

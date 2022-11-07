@@ -17,8 +17,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see cpsml.CpsmlPackage#getNode()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='statusBasedOnComponents'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot statusBasedOnComponents='\n\t\t\tself.status = Status::GOOD implies self.component-&gt;forAll(c| c.status = Status::GOOD)'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='statusBasedOnComponents_c1'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot statusBasedOnComponents_c1='\n\t\t\tself.status = Status::GOOD implies self.component-&gt;forAll(c| c.status = Status::GOOD)'"
  * @generated
  */
 public interface Node extends NamedElement, StatefulElement, MessagingElement, ConnectableElement {

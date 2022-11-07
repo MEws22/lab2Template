@@ -18,8 +18,8 @@ import org.eclipse.emf.common.util.EList;
  *
  * @see cpsml.CpsmlPackage#getConnectionModule()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='namingConvention'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot namingConvention='\n\t\t\tself.name.substring(1, self.oclContainer.oclAsType(NamedElement).name.size()) = self.oclContainer.oclAsType(NamedElement).name.toUpper()\n\t\t'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='namingConvention_cS2'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot namingConvention_cS2='\n\t\t\tself.name.substring(1, self.oclContainer.oclAsType(NamedElement).name.size()) = self.oclContainer.oclAsType(NamedElement).name.toUpper()\n\t\t'"
  * @generated
  */
 public interface ConnectionModule extends NamedElement {
